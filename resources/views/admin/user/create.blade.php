@@ -28,14 +28,45 @@
                     <div class="col-12">
                         <form action="{{route('admin.user.store')}}" method="POST" class="col-4">
                             @csrf
+
                             <div class="form-group">
-                                <label>Назва</label>
-                                <input type="text" class="form-control" name="title" placeholder="Имя">
+                                <label>Имя</label>
+                                <input type="text" class="form-control" name="name" placeholder="Имя"
+                                       value="{{ old('name') }}">
                             </div>
-                            @error('title')
-                                <div class="text-danger">Поле необходимо заполнить</div>
+                            @error('name')
+                            <div class="text-danger">Поле необходимо заполнить</div>
                             @enderror
-                            <input type="submit" class="btn btn-primary" value="Добавать">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" class="form-control" name="email" placeholder="Email"
+                                       value="{{ old('email') }}">
+                            </div>
+                            @error('email')
+                            <div class="text-danger">Поле необходимо заполнить</div>
+                            @enderror
+                            <div class="form-group">
+                                <label>Пароль</label>
+                                <input type="text" class="form-control" name="password" placeholder="Пароль"
+                                       value="{{ old('password') }}">
+                            </div>
+                            @error('password')
+                            <div class="text-danger">Поле необходимо заполнить</div>
+                            @enderror
+
+                            <div class="form-group w-25">
+                                <label>Виберите пользователя</label>
+                                <select class="form-control" name="role">
+                                    @foreach($roles as $id => $role)
+                                        <option
+                                            value="{{$id}}"{{$id == old('role') ? 'selected' : ''}}>{{$role}}</option>
+                                    @endforeach
+                                </select>
+                                @error('role')
+                                <div class="text-danger">Поле необходимо заполнить</div>
+                                @enderror
+                            </div>
+                            <button type="submit" class="btn btn-primary">Добавить</button>
                         </form>
                     </div>
                 </div>

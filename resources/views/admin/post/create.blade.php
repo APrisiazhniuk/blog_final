@@ -80,6 +80,9 @@
                                             value="{{$category->id}}"{{$category->id == old('category_id') ? 'selected' : ''}}>{{$category->title}}</option>
                                     @endforeach
                                 </select>
+                                @error('category_id')
+                                <div class="text-danger">Поле необходимо заполнить</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>Теги</label>
