@@ -30,13 +30,37 @@
                             @csrf
                             @method('patch')
                             <div class="form-group">
-                                <label>Назва</label>
-                                <input type="text" class="form-control" name="title" placeholder="Имя юзера"
-                                       value="{{$user->title}}">
+                                <label>Имя</label>
+                                <input type="text" class="form-control" name="name" placeholder="Имя юзера"
+                                       value="{{$user->name}}">
+                            </div>
+                            @error('name')
+                            <div class="text-danger">Поле необходимо заполнить</div>
+                            @enderror
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" name="email" placeholder="Email"
+                                       value="{{$user->email}}">
                             </div>
                             @error('title')
                             <div class="text-danger">Поле необходимо заполнить</div>
                             @enderror
+
+                            <div class="form-group w-50">
+                                <label>Виберите роль</label>
+                                <select class="form-control" name="role">
+                                    @foreach($roles as $id => $role)
+                                        <option
+                                            value="{{$id}}"{{$id == $user->role ? 'selected' : ''}}>{{$role}}</option>
+                                    @endforeach
+                                </select>
+                                @error('role')
+                                <div class="text-danger">Поле необходимо заполнить</div>
+                                @enderror
+                            </div>
+                            <div class="form-group w-50">
+                                <input type="hidden" name="user_id" value="{{$user->id}}">
+                            </div>
                             <input type="submit" class="btn btn-primary" value="Обновить">
                         </form>
                     </div>

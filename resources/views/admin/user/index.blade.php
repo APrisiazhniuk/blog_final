@@ -40,14 +40,14 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Название</th>
-                                        <th colspan="3" text->Действие</th>
+                                        <th colspan="3">Действие</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($users as $user)
                                         <tr>
                                             <td>{{$user->id}}</td>
-                                            <td>{{$user->title}}</td>
+                                            <td>{{$user->name}}</td>
                                             <td><a href="{{route('admin.user.show',$user->id)}}"><i
                                                         class="far fa-eye"></i></a></td>
                                             <td><a href="{{route('admin.user.edit',$user->id)}}"
