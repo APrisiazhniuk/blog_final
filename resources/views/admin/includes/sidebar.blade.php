@@ -7,7 +7,7 @@
                 <a href="{{route('admin.user.index')}}" class="nav-link">
                     <i class="nav-icon fas fa-users"></i>
                     <p>
-                        Юзери
+                        Юзеры
                     </p>
                 </a>
             </li>
@@ -21,7 +21,7 @@
             </li>
             <li class="nav-item">
                 <a href="{{route('admin.post.index')}}" class="nav-link">
-                    <i class="nav-icon far fa-file"></i>
+                    <i class="nav-icon fas fa-clipboard"></i>
                     <p>
                         Посты
                     </p>
