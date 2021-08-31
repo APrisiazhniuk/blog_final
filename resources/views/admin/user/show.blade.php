@@ -43,11 +43,15 @@
                                     <tbody>
                                     <tr>
                                         <td>ID</td>
-                                        <td>Назва</td>
+                                        <td>Имя</td>
+                                        <td>Email</td>
+                                        <td>Роль</td>
                                     </tr>
                                     <tr>
                                         <td>{{$user->id}}</td>
                                         <td>{{$user->name}}</td>
+                                        <td>{{$user->email}}</td>
+                                        <td>{{$user->role}}</td>
                                     </tr>
                                     </tbody>
                                 </table>
